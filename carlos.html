@@ -15,22 +15,73 @@
 <button class="btn" onclick="compra()"><b> COMPRAR COM CARLOS</button></a>
 <h>GANHADORES DA SEMANA PASSADA</h><br>
 
-<img src="bahia1.jpg" class="ganhador1">
 <img src="bahia3.jpg" class="ganhador1">
-<img src="bahia2.jpg" class="ganhador1">
 <img src="bahia3.jpg" class="ganhador1">
-<img src="bahia4.1.jpg" class="ganhador1">
-<img src="bahia4.2.jpg" class="ganhador1">
-<p><b>1º</b>ANTONIO CARLOS DE JESUS SANTANA</p>
-<p><b>1º</b>LUCAS SILVA DE JESUS</p>
-<p><b>2º</b> JOSE RAMOS DOS SANTOS</p>
-<p><b>3º</b>EZEQUIAS TEIXEIRA DA COSTA</p>
-<p><b>4º</b>JOSEVAL DE LISBOA BARBOSA</p>
-<p><b>4</b>ANGELA MARIA CALDA MENDES</p>
+<img src="bahia3.jpg" class="ganhador1">
+<img src="bahia3.jpg" class="ganhador1">
+<img src="bahia3.1.jpg" class="ganhador1">
+<img src="bahia3.2.jpg" class="ganhador1">
+
+<a href="giro.html">
+<button class="giro">RESULTADO GIRO DA SORTE</button></a>
+<p><b>1º</b>ANTÔNIO ALVES DA SILVA
+
+Bairro/cidade: IAPI (INTERNET/APP)
+
+Título: 1.656.968
+
+</p>
+<p><b>1ºEDUARDO MENDES DE SOUZA
+
+Bairro/cidade: QUIDE (INTERNET/APP)
+
+Título: 1.663.321
+
+</b></p>
+<p><b>1ºAGNALDO BALBINO DOS SANTOS
+
+Bairro/cidade: ITAPUÃ (INTERNET/APP)
+
+Título: 1.947.043
+
+</b></p>
+<p><b>1º MARCOS ANTONIO MENDES DA SILVA
+
+Bairro/cidade: REGIÃO METROPOLITANA (INTERNET/APP)
+
+Título: 2.169.726
+
+</b></p>
+<p><b>2º GILLAZARO PINHEIRO DOS SANTOS
+
+Bairro/cidade: CENTRO (PDV)
+
+Título: 0.634.926
+
+</b> 
+
+</p>
+<p><b>3º</b>EDUARDO SOUSA SILVA
+
+Bairro/cidade: URUGUAI (INTERNET/APP)
+
+Título: 1.991.602</p>
+<p><b>4º</b>ANTÔNIO ALVES DA SILVA
+
+Bairro/cidade: IAPI (INTERNET/APP)
+
+Título: 1.656.968
+
+</p>
+<p><b>4º</b>ANGELA MARIA CALDA MENDES</p>
+
+
+
+<p class="pxm">PROXIMO SORTEIO DIA 31/03 AGUARDEM...</p>
 <style>
 body {
-    background:green;
-    color:white;
+    background:gold;
+    color:black;
     
     
 }
@@ -49,7 +100,7 @@ h3 {
     
     
 }
- .btn {
+ #btn {
           width:80%;
           height:40px;
           margin-left:10%;
@@ -57,7 +108,7 @@ h3 {
           
           
       }    
-      .btn:focus{
+      #btn:focus{
           background:red;
           color:gold;
           border-radius:16px;
@@ -65,7 +116,7 @@ h3 {
           outline:none;
           border:1px solid blue;
       }
-      h {margin-left:5%;
+      h {margin-left:10%;
       padding :10px;
       display:flex;
           
@@ -75,10 +126,36 @@ h3 {
     height:100px;
     margin-left:2px;
 }
+
+.pxm {
+    color:red;
+    background:black;
+}
+.giro {
+    width:60%;
+    height:50px;
+    display:flex;
+    margin-left:20%;
+    text-aligh:center;
+    padding:5px 30px;
+    border:10px;
+    background:orange;
+    border-radius:16px;
+    border:1px solid black;
+    outline:none;
+    color:white;
+    whieght:700;
+}
+  .blink { animation: blink 2s steps(1, end) infinite;}
+     @keyframes blink { 0% { background:red; } 25% { background:pink; } 50% { background:gold; }75% {background:purple;
+     color:white;
+     }100% {background:pink;}
+     
+     }
 </style>
 <script>
 function compra(){
-    alert ("Informe CPF e TELEFONE\nou So TELEFONE");
+    alert ("INFORME (CPF e TELEFONE)\nou So TELEFONE");
 }
 </script>
 </body>
