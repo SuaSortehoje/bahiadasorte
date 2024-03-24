@@ -12,7 +12,7 @@
 <a href="https://api.whatsapp.com/send?phone=5571987444544&text=QUERO%20COMPRA%20O%20BAHIA%20DA%20SORTE">
 <button class="blink"id="btn" onclick="compra()"><b> COMPRAR COM SUELI</button></a>
 
-<h>GANHADORES DA SEMANA PASSADA17/03</h><br>
+<h>GANHADORES DA SEMANA PASSADA 17/03</h><br>
 
 <img src="bahia1.jpg" class="ganhador1">
 <img src="bahia3.jpg" class="ganhador1">
@@ -26,6 +26,7 @@
 <p><b>3º</b>EZEQUIAS TEIXEIRA DA COSTA</p>
 <p><b>4º</b>JOSEVAL DE LISBOA BARBOSA</p>
 <p><b>4</b>ANGELA MARIA CALDA MENDES</p>
+<p class="pxm">PROXIMO SORTEIO DIA <b>24/03</b> AGUARDEM...</p>
 <style>
 body {
     background:green;
@@ -64,9 +65,8 @@ h3 {
           outline:none;
           border:1px solid blue;
       }
-      h {
-       margin-left:1%;
-      padding:10px;
+      h {margin-left:0%;
+      padding :10px;
       display:flex;
           
       }
@@ -76,8 +76,16 @@ h3 {
     margin-left:2px;
 }
 
+.pxm {
+    color:red;
+    background:black;
+}
   .blink { animation: blink 2s steps(1, end) infinite;}
-     @keyframes blink { 0% { opacity: 1; } 50% { opacity: 0; } 100% { opacity: 1; }}
+     @keyframes blink { 0% { background:red; } 25% { background:pink; } 50% { background:gold; }75% {background:purple;
+     color:white;
+     }100% {background:pink;}
+     
+     }
 </style>
 <script>
 function compra(){
