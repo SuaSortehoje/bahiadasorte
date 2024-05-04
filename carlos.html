@@ -18,7 +18,7 @@
       <input maxlength="12"type="tel" id="telefone" name="telefone" required><br><br>
       <label for="numeroDezenas">Número de Dezenas:</label>
       <input  maxlength="2"type="tel" id="numeroDezenas" name="numeroDezenas" required ><br><br>
-      <button type="submit">Enviar via Pix</button>
+      <button type="submit">Enviar para validar</button>
     </form>
   </div>
 </div>
@@ -44,60 +44,17 @@
 <img src="bahia3.jpg" class="ganhador1">
 <img src="bahia3.jpg" class="ganhador1">
 
+<a href="ganhadorSemanaBahia.html">
+<button type="button" value="RESULTADO GIRO DA SORTE"class="giro">GANHADORES DOS 4 PRIMEIRO PRÊMIO </button></a>
+
 <a href="giro.html">
-<button class="giro">RESULTADO GIRO DA SORTE</button></a>
-<p class="premio">OS GANHADIRES DO 4 PRIMEIRO PREMIO </p>
-
-</b></p>
-<p><b><h>1ºANDRÉIA COSTA CARDOSO DOS SANTOS
-</h>
-Bairro/cidade: REGIÃO METROPOLITANA (INTERNET/APP)
-
-Título: 1.623.841
-
-
-
-</b></p>
-<p><b><h>2ºEVANDRO FERREIRA DE QUEIROZ JUNIOR
-</h>
-Bairro/cidade: REGIÃO METROPOLITANA (INTERNET/APP)
-
-Título: 1.838.894
-
-</p>
-<p><b><h>3º CAIO DOS REIS DO NASCIMENTO</h>
-
-Bairro/cidade: NOVA CANDEIAS (INTERNET/APP)
-
-Título: 2.135.948
-
-
-
-</b> 
-
-</p>
-<p><b><h>4º JAILDA NASCIMENTO</h>
-
-Bairro/cidade: CAMPINAS DE PIRAJÁ (INTERNET/APP)
-
-Título: 1.632.330
-
-</p>
-<p><b><h>4º REINALDO FERREIRA SANTOS</h>
-
-Bairro/cidade: SÃO CRISTÓVÃO (INTERNET/APP)
-
-Título: 1.845.938
-
-
-
-</p>
-<p><b></b></p>
-
-
-
-<p class="pxm">PROXIMO SORTEIO DIA 05/05 AGUARDEM...</p>
+<button type="button" value="RESULTADO GIRO DA SORTE"class="giro">RESULTADO GIRO DA SORTE</button></a>
+<p style="margin-left:60px; ">ACREDITA QUE ACONTECER</p>
 <style>
+h2{
+    font-size:18px;
+    color:green;
+}
   .modal {
     display: none;
     position: fixed;
@@ -183,19 +140,20 @@ h3 {
     background:black;
 }
 .giro {
-    width:80%;
+    width:40%;
     height:50px;
-    display:flex;
-    margin-left:10%;
+    display:inline;
+    margin-left:5%;
     text-aligh:center;
-    padding:20px 50px;
+    font-size:12px;
+    weight-font:bold;
     border:10px;
     background:orange;
     border-radius:16px;
     border:1px solid black;
     outline:none;
     color:black;
-    weight:900;
+    
 }
 h {
     color:red;
@@ -205,6 +163,17 @@ a {
 }
   .blink { animation: blink 2s steps(1, end) infinite;}
      @keyframes blink { 0% { background:red; } 25% { background:pink; } 50% { background:gold; }75% {background:purple;
+     color:white;
+     }100% {background:pink;}
+     
+     }
+     
+ submit{
+     animation: submit 2s steps(1, end) infinite;}
+
+    @keyframes submit { 0% { background:red; } 
+    25% { background:pink; } 50% { background:gold; }75% 
+    {background:purple;
      color:white;
      }100% {background:pink;}
      
