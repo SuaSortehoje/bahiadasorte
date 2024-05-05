@@ -36,28 +36,13 @@
 <a href="https://api.whatsapp.com/send?phone=5571992290058&text=QUERO%20COMPRA%20O%20BAHIA%20DA%20SORTE">
 <img src="bahia4.jpeg" onclick="compra()" id="rodado" class="" for=""></a><br><br>
 
-<button class="blink" onclick="compra()"id="openModal"><b> COMPRAR COM CARLOS</button></a>
+<button class="blink" onclick="compra()"id="openModal1"><b> COMPRAR COM CARLOS</button>
+
+<a href="resultadoBahiaDaSorte.html">
+<button  onclick="compra()"id="openModal"><b>RESULTADO</button></a>
 
 
-<h>GANHADORES DA SEMANA 05/05</h><br>
 
-<img src="bahia3.jpg" class="ganhador1">
-<img src="bahia3.jpg" class="ganhador1">
-<img src="bahia3.jpg" class="ganhador1">
-<img src="bahia3.jpg" class="ganhador1">
-<img src="bahia3.jpg" class="ganhador1">
-<img src="bahia3.jpg" class="ganhador1">
-<img src="bahia3.jpg" class="ganhador1">
-<img src="bahia3.jpg" class="ganhador1">
-<img src="bahia3.jpg" class="ganhador1">
-<img src="bahia3.jpg" class="ganhador1">
-
-<a href="ganhadorSemanaBahiaSorte.html">
-<button type="button" value="RESULTADO GIRO DA SORTE"class="giro">GANHADORES DOS 4 PRIMEIRO PRÊMIO </button></a>
-
-<a href="giro.html">
-<button type="button" value="RESULTADO GIRO DA SORTE"class="giro">RESULTADO GIRO DA SORTE</button></a>
-<p style="margin-left:60px; ">ACREDITA QUE ACONTECER</p>
 <style>
 
 [type=submit]{
@@ -124,13 +109,27 @@ h3 {
     
 }
  #openModal {
-          width:80%;
+          display:inline-block;
+          width:40%;
           height:40px;
-          margin-left:10%;
+          margin-left:5%;
           background:gold;
-          
-          
+          border-radius:10px;
+          outline:none;   
+          text-align:center; 
       }    
+       #openModal1 {
+          display:inline-block;
+          width:40%;
+          height:40px;
+          margin-left:5%;
+          background:gold;
+          border-radius:10px;
+          outline:none;
+          text-align:center;
+          padding:10px;
+          
+          }
       #btn:focus{
           background:red;
           color:gold;
@@ -139,9 +138,7 @@ h3 {
           outline:none;
           border:1px solid blue;
       }
-      h {margin-left:10%;
-      padding :10px;
-      display:flex;
+
           
       }
 .ganhador1{
@@ -172,14 +169,16 @@ h3 {
     color:black;
     
 }
-h {
-    color:red;
-}
+
 a {
     color:orange;
 }
   .blink { animation: blink 2s steps(1, end) infinite;}
-     @keyframes blink { 0% { background:red; } 25% { background:pink; } 50% { background:gold; }75% {background:purple;
+     @keyframes blink { 
+     0% { background:red; } 
+     25% { background:pink; } 
+     50% { background:gold; }
+     75% {background:purple;
      color:white;
      }100% {background:pink;}
      
@@ -209,6 +208,7 @@ a {
     text-align:center;
     align-text:center;
 }
+
 </style>
 
 <script>
