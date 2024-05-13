@@ -6,9 +6,8 @@
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
  <link rel="stylesheet" type="text/css" href="stylesheet.css" media="screen" />
 <title> bahia da sorte</title>
-<link rel="icon" href="https://raw.githubusercontent.com/SuaSortehoje/bahiadasorte/main/bahia12-05.jpeg" type="image/x-icon"> 
-
-<meta name="url" content="https://multijogo-38.webnode.page/dezenas/"> 
+<link rel="icon" href="https://raw.githubusercontent.com/SuaSortehoje/bahiadasorte/main/19_05.jpg"> 
+<meta name="url" content="https://multijogo-38.webnode.page/dezenas/"> <br>
 
 
  </head> 
@@ -73,31 +72,31 @@ body {
 h3 {
     margin-left:30%;
     content-justify:center;
-    color:white;
+    color:black;
     
     
 }
  #openModal {
-          display:inline-block;
-          width:40%;
+          display:inline;
+          width:30%;
           height:40px;
-          margin-left:5%;
+          margin-left:30px;
           background:gold;
           border-radius:10px;
           outline:none;   
-          text-align:center; 
+         
       }    
        #openModal1 {
-          display:inline-block;
-          width:40%;
+          display:inline;
+          width:30%;
           height:40px;
-          margin-left:5%;
+          margin-left:70px;
           background:gold;
           border-radius:10px;
           outline:none;
-          text-align:center;
-          padding:6px;
-          margin-bottom: 5px;
+          ;
+          
+          
           
           }
       #btn:focus{
@@ -171,7 +170,7 @@ a {
     Justify-content:center;
 }
 
-#numeroDezenas{
+[name=numeroDezenas]{
     width:30px;
     background:black;
     color:white;
@@ -187,14 +186,14 @@ a {
     <h2>COMPRAR O BAHIA DA SORTE</h2>
     <form id="pixForm">
       <label for="cpf"><b>CPF:</label>
-      <input maxlength="9"type="tel" id="cpf" name="cpf"><br><br>
+      <input maxlength="14"type="tel" id="cpf" name="cpf"><br><br>
       <label for="telefone"><b>Telefone:</label>
-      <input maxlength="12"type="tel" id="telefone" name="telefone" required><br><br>
+      <input maxlength="13"type="tel" id="telefone" name="telefone" required><br><br>
  <label for="numeroDezenas">Nº Dezenas:</label>
-      <input  maxlength="2"type="tel" id="numeroDezenas" name="numeroDezenas" required >
+      <input  maxlength="2"type="tel" id="numeroDezenas1" name="numeroDezenas" required >
       
-     <input  maxlength="2"type="tel" id="numeroDezenas" name="numeroDezenas" > <input  maxlength="2"type="tel" id="numeroDezenas" name="numeroDezenas"  > 
-     <input  maxlength="2"type="tel" id="numeroDezenas" name="numeroDezenas" ><br>
+     <input  maxlength="2"type="tel" id="numeroDezenas2" name="numeroDezenas" > <input  maxlength="2"type="tel" id="numeroDezenas3" name="numeroDezenas"  > 
+     <input  maxlength="2"type="tel" id="numeroDezenas4" name="numeroDezenas" ><br>
       <button type="submit">Enviar para validar</button>
     </form>
   </div>
@@ -203,9 +202,9 @@ a {
  <h3> BAHIA da SORTE </h3>
  
 <a href="https://api.whatsapp.com/send?phone=5571992290058&text=QUERO%20COMPRA%20O%20BAHIA%20DA%20SORTE">
-<img src="bahia{12-05}.jpeg" onclick="compra()" id="rodado" class="" for=""></a><br><br>
+<img src="bahia4.jpeg" onclick="compra()" id="rodado" class="" for=""></a><br><br>
 
-<button class="blink" onclick="compra()"id="openModal"><b> COMPRAR COM CARLOS</button>
+<button class="blink" onclick="compra()"id="openModal"><b> COMPRAR</button>
 
 <a href="resultadoBahiaDaSorte.html">
 <button  onclick="compra()"id="openModal1"><b>RESULTADO</button></a>
@@ -229,9 +228,13 @@ document.getElementById('pixForm').addEventListener('submit', function (event) {
   event.preventDefault();
   const cpf = document.getElementById('cpf').value;
   const telefone = document.getElementById('telefone').value;
-  const numeroDezenas = document.getElementById('numeroDezenas').value;
+  let numeroDezenas = document.getElementById('numeroDezenas1','numeroDezenas2','numeroDezenas3','numeroDezenas4').value;
+  const titulo =
+  document.getElementById('titulo');
+  
   const numeroWhatsApp = '71992290058';
-  var mensagem = `CPF: ${cpf}\n\nTelefone: ${telefone}\n\nNúmero de Dezenas: ${numeroDezenas}`;
+  var mensagem = `${titulo}
+  CPF: ${cpf}\n\nTelefone: ${telefone}\n\nNúmero de Dezenas: ${numeroDezenas}`;
   var mensagemEncoded = encodeURIComponent(mensagem);
   var linkWhatsApp = `https://api.whatsapp.com/send?phone=${numeroWhatsApp}&text=${mensagemEncoded}`;
   window.open(linkWhatsApp, '_blank');
