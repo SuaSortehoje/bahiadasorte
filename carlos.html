@@ -40,6 +40,7 @@ h2{
     padding: 20px;
     border: 1px solid #888;
     width: 80%;
+    border-radius:10px;
   }
   .close {
     color: red;
@@ -81,7 +82,8 @@ h3 {
           margin-left:30px;
           background:gold;
           border-radius:10px;
-          outline:none;   
+          outline:none;  
+          border-radius:10px; 
          
       }    
        #openModal1 {
@@ -140,37 +142,25 @@ h3 {
 a {
     color:orange;
 }
-  .blink { animation: blink 2s steps(1, end) infinite;}
-     @keyframes blink { 
-     0% { background:red; } 
-     25% { background:pink; } 
-     50% { background:gold; }
-     75% {background:purple;
-     color:white;
-     }100% {background:pink;}
-     
-     }
-     
- submit{
-     animation: submit 2s steps(1, end) infinite;}
-
-    @keyframes submit { 0% { background:red; } 
-    25% { background:pink; } 50% { background:gold; }75% 
-    {background:purple;
-     color:white;
-     }100% {background:pink;}
-     
-     }
-     
+ 
 .premio {
     display:flex;
     flex-direction;
     Justify-content:center;
 }
-
+ button[type="submit"]{
+     margin-left:80px;
+     border-radius:10px;
+     outline:none;   
+ }
+  button[type="submit"]:hover {
+      background:green;
+      color:white;
+  }
 [name=numeroDezenas]{
     width:30px;
-    background:black;
+    background:;
+    border-radius:5px;
     color:white;
     text-align:center;
     align-text:center;
@@ -227,12 +217,18 @@ document.getElementById('pixForm').addEventListener('submit', function (event) {
   const cpf = document.getElementById('cpf').value;
   const telefone = document.getElementById('telefone').value;
   let numeroDezenas = document.getElementById('numeroDezenas1','numeroDezenas2','numeroDezenas3','numeroDezenas4').value;
-  const titulo =
-  document.getElementById('titulo');
+  const titulo =('VALIDAR O BAHIA DA SORTE');
   
   const numeroWhatsApp = '71992290058';
-  var mensagem = `${titulo}
-  CPF: ${cpf}\n\nTelefone: ${telefone}\n\nNúmero de Dezenas: ${numeroDezenas}`;
+  
+  var mensagem = `*${titulo}*
+  
+  CPF: ${cpf}
+  
+  Telefone: ${telefone}
+  
+  Número de Dezenas: ${numeroDezenas}`;
+  
   var mensagemEncoded = encodeURIComponent(mensagem);
   var linkWhatsApp = `https://api.whatsapp.com/send?phone=${numeroWhatsApp}&text=${mensagemEncoded}`;
   window.open(linkWhatsApp, '_blank');
