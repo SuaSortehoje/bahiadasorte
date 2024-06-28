@@ -223,20 +223,31 @@ document.getElementById('pixForm').addEventListener('submit', function (event) {
  const chavepix='telefone: 71992290058';
  
  const alerta ="Apos o fazer o ( PIX ) Aguarde ate 10 minutos para receber sua cartela validada";
+ 
+ const valor = "RS 5.00";
+ 
+ var lista ="-----------------------------------------------";
+ var saudacao ="BOA SORTE";
   
   const numeroWhatsApp = '71992290058';
   
-  var mensagem = `*${titulo}*
+       var mensagem = `*☘${titulo}☘*
   
-  CPF: ${cpf}
+              CPF : ${cpf}
   
-  Telefone: ${telefone}
+         Telefone : ${telefone}
   
-  Número de Dezenas: ${numeroDezenas}
+ Número de Dezenas: ${numeroDezenas}
+       
+           VALOR : *${valor}*
   
-  chave pix : ${chavepix}
+*${lista}*
   
-  *${alerta}*`;
+        CHAVE PIX : ${chavepix}
+  
+  *${alerta}*
+  
+                      *☘${saudacao}☘*`;
   
   var mensagemEncoded = encodeURIComponent(mensagem);
   var linkWhatsApp = `https://api.whatsapp.com/send?phone=${numeroWhatsApp}&text=${mensagemEncoded}`;
