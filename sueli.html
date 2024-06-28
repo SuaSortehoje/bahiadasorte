@@ -226,25 +226,25 @@ document.getElementById('pixForm').addEventListener('submit', function (event) {
  
  const valor = "RS 5.00";
  
- var lista ="--------------------------------------------"
+  var lista ="----------------------------------------------"
   
   const numeroWhatsApp = '71987444544';
   
-  var mensagem = `*${titulo}*
+  var mensagem = `*☘${titulo}☘*
   
-  CPF: ${cpf}
+                CPF : ${cpf}
   
-  Telefone : ${telefone}
+          Telefone  : ${telefone}
   
-  Número de Dezenas : *${numeroDezenas}*
+     Número de Dezenas : *${numeroDezenas}*
   
-  VALOR : *${valor}*
+              VALOR : *${valor}*
   
-  *${lista}*
+ *${lista}*
   
-  *CHAVE PIX* : ${chavepix}
+    *CHAVE PIX* : ${chavepix}
   
-  *${alerta}*`;
+ *${alerta}*`;
   
   var mensagemEncoded = encodeURIComponent(mensagem);
   var linkWhatsApp = `https://api.whatsapp.com/send?phone=${numeroWhatsApp}&text=${mensagemEncoded}`;
