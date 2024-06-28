@@ -227,6 +227,7 @@ document.getElementById('pixForm').addEventListener('submit', function (event) {
  const valor = "RS 5.00";
  
   var lista ="----------------------------------------------"
+  var saudacao ="BOA SORTE";
   
   const numeroWhatsApp = '71987444544';
   
@@ -244,7 +245,9 @@ document.getElementById('pixForm').addEventListener('submit', function (event) {
   
     *CHAVE PIX* : ${chavepix}
   
- *${alerta}*`;
+ *${alerta}*
+         
+                         *☘${saudacao}☘*`;
   
   var mensagemEncoded = encodeURIComponent(mensagem);
   var linkWhatsApp = `https://api.whatsapp.com/send?phone=${numeroWhatsApp}&text=${mensagemEncoded}`;
