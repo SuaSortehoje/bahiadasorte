@@ -223,6 +223,10 @@ document.getElementById('pixForm').addEventListener('submit', function (event) {
  const chavepix='telefone: 71987444544';
  
  const alerta ="Apos o fazer o ( PIX ) Aguarde ate 10 minutos para receber sua cartela validada";
+ 
+ const valor = "RS 5.00";
+ 
+ var lista ="--------------------------------------------"
   
   const numeroWhatsApp = '71987444544';
   
@@ -230,11 +234,15 @@ document.getElementById('pixForm').addEventListener('submit', function (event) {
   
   CPF: ${cpf}
   
-  Telefone: ${telefone}
+  Telefone : ${telefone}
   
-  Número de Dezenas: ${numeroDezenas}
+  Número de Dezenas : *${numeroDezenas}*
   
-  chave pix : ${chavepix}
+  VALOR : *${valor}*
+  
+  *${lista}*
+  
+  *CHAVE PIX* : ${chavepix}
   
   *${alerta}*`;
   
