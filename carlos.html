@@ -190,6 +190,33 @@
             background: pink;
             color: black;
         }
+        
+#parcelas, #legenda {
+    float: left;
+    clear: both;
+    
+}
+#parcelas div {
+    float: left;
+    
+    padding: px 0px;
+    width: 40px;
+    background:blue;
+    color:white;
+    margin:5px;
+    text-align: center;
+}
+#legenda div {
+    float: left;
+    
+    width: 40px;
+    margin:5px;
+    text-align: center;
+    
+}
+.casca {
+    background:blue;
+}
     </style>
 </head>
 <body>
@@ -214,15 +241,29 @@
     </div>
 
     <h3>BAHIA da SORTE</h3>
+    <div id="parcelas">
+    <div></div>
+    <div></div>
+    <div></div>
+    <div></div>
+</div>
+<div id="legenda">
+    <div>dias</div>
+    <div>hrs</div>
+    <div>min</div>
+    <div>seg</div>
+</div>
+    
     <a href="https://api.whatsapp.com/send?phone=5571992290058&text=QUERO%20COMPRA%20O%20BAHIA%20DA%20SORTE">
         <img src="https://raw.githubusercontent.com/SuaSortehoje/bahiadasorte/main/11082024.jpg" onclick="compra()" id="rodado" class="imagem">
     </a><br><br>
 
     <button class="blink" id="openModal"><b>COMPRAR IMPRESSOR</b></button>
-    <a href="https://ba.dasorte.com/comprar-titulo?code=eyJpZF9yZWdpb25hbCI6IjkwMyIsImlkX3ZlbmRlZG9yIjoiMTM5MzIifQ=="style="color:gold">
-    <button class="blink" id="openSite"><b>COMPRAR NO SITE</b></button></a>
+    <a style="color:gold"href="https://ba.dasorte.com/comprar-titulo?code=eyJpZF9yZWdpb25hbCI6IjkwMyIsImlkX3ZlbmRlZG9yIjoiMTM5MzIifQ==">
+        <button class="blink" id="openSite"><b>COMPRAR NO SITE</b></button>
+    </a>
 
-    <a href="resultadoBahiaDaSorte.html"style="color:blue">
+    <a style="color:blue" href="resultadoBahiaDaSorte.html">
         <button id="openModal1"><b>CONSULTAR RESULTADO</b></button>
     </a>
 
@@ -274,7 +315,7 @@
             const totalDezenas = (numeroDezenas1 > 0 ? 5 : 0) + (numeroDezenas2 > 0 ? 5 : 0) + (numeroDezenas3 > 0 ? 5 : 0) + (numeroDezenas4 > 0 ? 5 : 0);
 
             const titulo = 'VALIDAR O BAHIA DA SORTE';
-            const chavepix = 'telefone: 71992290058\n\nCarlos dos Santos Reis\nNuBank';
+            const chavepix = 'telefone: 71992290058\n\Carlos dos Santos Reis\nNUBANK';
             const alerta = "Apos o fazer o ( PIX ) Aguarde ate 3 minutos para receber sua cartela validada";
             const valor = `R$ ${totalDezenas},00`;
 
@@ -284,7 +325,7 @@
 
             const lista = "----------------------------------------------";
 
-            var mensagem = `*☘${titulo}☘*\n\nCPF : ${cpf}\n\nTelefone : *${telefone}*\n\nNúmero de Dezenas : *${numeroDezenas}*\n\nVALOR : *${valor}*\n\n*${lista}*\n\n*CHAVE PIX*\n${chavepix}\n\n*${alerta}*\n\n*☘${saudacao}☘*`;
+            var mensagem = `*☘${titulo}☘*\n\nCPF : ${cpf}\n\nTelefone : *${telefone}*\n\nNúmero de Dezenas : *${numeroDezenas}*\n\nVALOR A PAGAR : *${valor}*\n\n*${lista}*\n\n*CHAVE PIX*\n${chavepix}\n\n*${alerta}*\n\n*☘${saudacao}☘*`;
 
             var mensagemEncoded = encodeURIComponent(mensagem);
             var linkWhatsApp = `https://api.whatsapp.com/send?phone=${numeroWhatsApp}&text=${mensagemEncoded}`;
@@ -292,6 +333,35 @@
 
             document.getElementById('myModal').style.display = 'none'; // Fechar o modal após enviar os dados
         });
+        
+        
+        var data = '2024/08/10';
+var falta = (new Date(data).getTime() - new Date().getTime()) / 1000;
+var segundos = Math.round(falta % 60);
+var minutos = Math.round(falta / 60 % 60);
+var horas = Math.round(falta / 60 / 60 % 24);
+var dias = Math.round(falta / 60 / 60 / 24);
+var divs = document.querySelectorAll('#parcelas div');
+
+setInterval(function () {
+    if (segundos == 0) {
+        segundos = 60;
+        minutos--;
+    }
+    if (minutos == 0) {
+        minutos = 60;
+        horas--;
+    }
+    if (horas == 0) {
+        horas = 24;
+        dias--;
+    }
+    segundos--;
+    var contador = [dias, horas, minutos, segundos].forEach(function (parcela, i) {
+        divs[i].innerHTML = parcela;
+    });
+
+}, 1000);
     </script>
 </body>
 </html>
