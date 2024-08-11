@@ -339,7 +339,7 @@
 var falta = (new Date(data).getTime() - new Date().getTime()) / 1000;
 var segundos = Math.round(falta % 60);
 var minutos = Math.round(falta / 60 % 60);
-var horas = Math.round(falta / 16 / 60 % 24);
+var horas = Math.round(falta / 10 / 60 % 24);
 var dias = Math.round(falta / 60 / 60 / 24);
 var divs = document.querySelectorAll('#parcelas div');
 
