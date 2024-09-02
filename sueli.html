@@ -1,8 +1,8 @@
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//pt-BR">
 <html lang="pt-BR">
 <head>
-    <link rel="shortcut icon" type="image/png" href="https://raw.githubusercontent.com/SuaSortehoje/bahiadasorte/main/IMGbahia_sorte.jpg">
-    <link rel="icon" href="https://raw.githubusercontent.com/SuaSortehoje/bahiadasorte/main/IMGbahia_sorte.jpg" type="image/jpg">
+    <link rel="shortcut icon" type="image/png" href="https://raw.githubusercontent.com/SuaSortehoje/bahiadasorte/main/IMGbahia_sorte1.jpg">
+    <link rel="icon" href="https://raw.githubusercontent.com/SuaSortehoje/bahiadasorte/main/IMGbahia_sorte1.jpg" type="image/jpg">
     <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
     <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
     <link rel="stylesheet" type="text/css" href="stylesheet.css" media="screen" />
@@ -217,6 +217,12 @@
 .casca {
     background:blue;
 }
+#valorTotal{
+    font-weight:bold;
+    margin-left:60px;
+    font-size:20px
+    
+}
     </style>
 </head>
 <body>
@@ -229,7 +235,7 @@
                 <input maxlength="14" type="tel" id="cpf" name="cpf"><br><br>
                 <label for="telefone"><b>TELEFONE :</b></label>
                 <input maxlength="13" type="tel" id="telefone" name="telefone" required><br><br>
-                <label for="numeroDezenas">Nº Dezenas:</label>
+                <label for="numeroDezenas"><b>Nº Dezenas:</b></label>
                 <input maxlength="2" type="tel" id="numeroDezenas1" name="numeroDezenas" required oninput="validarDezena(this)">
                 <input maxlength="2" type="tel" id="numeroDezenas2" name="numeroDezenas" oninput="validarDezena(this)">
                 <input maxlength="2" type="tel" id="numeroDezenas3" name="numeroDezenas" oninput="validarDezena(this)">
@@ -254,8 +260,8 @@
     <div>seg</div>
 </div>
     
-    <a href="https://api.whatsapp.com/send?phone=55719987444544&text=QUERO%20COMPRA%20O%20BAHIA%20DA%20SORTE">
-        <img src="https://raw.githubusercontent.com/SuaSortehoje/bahiadasorte/main/18082024.jpg" onclick="compra()" id="rodado" class="imagem">
+    <a href="https://api.whatsapp.com/send?phone=5571987444544&text=QUERO%20COMPRA%20O%20BAHIA%20DA%20SORTE">
+        <img src="https://raw.githubusercontent.com/SuaSortehoje/bahiadasorte/main/01092024.jpg" onclick="compra()" id="rodado" class="imagem">
     </a><br><br>
 
     <button class="blink" id="openModal"><b>COMPRAR IMPRESSOR</b></button>
@@ -282,7 +288,7 @@
             const numeroDezenas3 = parseInt(document.getElementById('numeroDezenas3').value) || 0;
             const numeroDezenas4 = parseInt(document.getElementById('numeroDezenas4').value) || 0;
 
-            const totalDezenas = (numeroDezenas1 > 0 ? 5 : 0) + (numeroDezenas2 > 0 ? 5 : 0) + (numeroDezenas3 > 0 ? 5 : 0) + (numeroDezenas4 > 0 ? 5 : 0);
+            const totalDezenas = (numeroDezenas1 > 0 ? 10 : 0) + (numeroDezenas2 > 0 ? 10 : 0) + (numeroDezenas3 > 0 ? 10 : 0) + (numeroDezenas4 > 0 ? 10 : 0);
             document.getElementById('valorTotal').textContent = `Valor Total: R$ ${totalDezenas},00`;
         }
 
@@ -312,20 +318,21 @@
             const numeroDezenas = `${numeroDezenas1}, ${numeroDezenas2}, ${numeroDezenas3}, ${numeroDezenas4}`;
 
             // Calcule o valor total das dezenas
-            const totalDezenas = (numeroDezenas1 > 0 ? 5 : 0) + (numeroDezenas2 > 0 ? 5 : 0) + (numeroDezenas3 > 0 ? 5 : 0) + (numeroDezenas4 > 0 ? 5 : 0);
+            const totalDezenas = (numeroDezenas1 > 0 ? 10 : 0) + (numeroDezenas2 > 0 ? 10 : 0) + (numeroDezenas3 > 0 ? 10 : 0) + (numeroDezenas4 > 0 ? 10 : 0);
 
             const titulo = 'VALIDAR O BAHIA DA SORTE';
-            const chavepix = 'telefone: 71987444544\n\nSueli Maciel Silva\nRecargaPay';
+            const premio ="*400.000.00*\n TOTAL LIQUIDO R$ 400.000.00";
+            const chavepix = 'telefone: 71987444544\n\Sueli Maciel Silva\nRecargaPay';
             const alerta = "Apos o fazer o ( PIX ) Aguarde ate 3 minutos para receber sua cartela validada";
             const valor = `R$ ${totalDezenas},00`;
 
             const saudacao = "BOA SORTE!!!";
 
-            const numeroWhatsApp = 71987444544;
+            const numeroWhatsApp = 71992290058;
 
             const lista = "----------------------------------------------";
 
-            var mensagem = `*☘${titulo}☘*\n\nCPF : ${cpf}\n\nTelefone : *${telefone}*\n\nNúmero de Dezenas : *${numeroDezenas}*\n\nVALOR A PAGAR : *${valor}*\n\n*${lista}*\n\n*CHAVE PIX*\n${chavepix}\n\n*${alerta}*\n\n*☘${saudacao}☘*`;
+            var mensagem = `  *☘${titulo}☘*\n                    ${premio}\n\nCPF : ${cpf}\n\nTelefone : ${telefone}\n\nNúmero de Dezenas : ${numeroDezenas}\n\nVALOR A PAGAR : ${valor}\n\n*${lista}*\n\n*CHAVE PIX*\n${chavepix}\n\n*${alerta}*\n\n*☘${saudacao}☘*`;
 
             var mensagemEncoded = encodeURIComponent(mensagem);
             var linkWhatsApp = `https://api.whatsapp.com/send?phone=${numeroWhatsApp}&text=${mensagemEncoded}`;
@@ -335,11 +342,11 @@
         });
         
         
-        var data = '2024/08/18';
+        var data = '2024/09/08';
 var falta = (new Date(data).getTime() - new Date().getTime()) / 1000;
 var segundos = Math.round(falta % 60);
 var minutos = Math.round(falta / 60 % 60);
-var horas = Math.round(falta / 10 / 60 % 24);
+var horas = Math.round(falta / 60 / 60 % 24);
 var dias = Math.round(falta / 60 / 60 / 24);
 var divs = document.querySelectorAll('#parcelas div');
 
