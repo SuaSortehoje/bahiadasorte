@@ -225,8 +225,8 @@
     
 }
 .imgCompra{
-    width:23%;
-    height:50px;
+    width:15%;
+    height:45px;
     margin:2px;
 }
 #txta{
@@ -235,8 +235,10 @@
 .central{
     display:flex;
     justify-content:center;
+    
 }
-.marquee { display:linear;width:150%; overflow: hidden; white-space: nowrap; box-sizing: border-box; animation: marquee 25s linear infinite; } @keyframes marquee { from { transform: translateX(100%); } to { transform: translateX(-100%); } }
+.marquee { display:linear;width:150%; overflow: hidden; white-space: nowrap; box-sizing: border-box; animation: marquee 25s linear infinite; } 
+@keyframes marquee { 0% { transform: translateX(0%); } 50% { transform: translateX(-50%); } 100% { transform: translateX(-0%); } }
 
 html, body {
   overflow: hidden;
@@ -249,7 +251,13 @@ html, body {
     
     
 }
-.item { display: inline-block; width: 23%; /* Ajuste para evitar quebra de linha */ margin: 0 0.3%; padding: 0px; background-color: lightgreen; text-align: center; }
+.item { display: inline-block; width: 15%; /* Ajuste para evitar quebra de linha */ margin: 0 0.3%; padding: 0px; background-color: lightgreen; text-align: center; }
+
+.labelCompra{
+    text-align:center;
+    font-weight:bold;
+    margin-left:30px;
+}
     </style>
 </head>
 <body>
@@ -290,15 +298,19 @@ html, body {
 </div>
     </div>
     <a href="https://api.whatsapp.com/send?phone=5571992290058&text=QUERO%20COMPRA%20O%20BAHIA%20DA%20SORTE">
-        <img src="https://raw.githubusercontent.com/SuaSortehoje/bahiadasorte/main/17112024.jpg" onclick="compra()" id="rodado" class="imagem">
+        <img alt="SEM EDICAO" src="https://raw.githubusercontent.com/SuaSortehoje/bahiadasorte/main/17112024.jpg" onclick="compra()" id="rodado" class="imagem">
     </a><br>
 <div class="marquee" >
     <div class="alinha">
+        <div class="item">IPTV</div>
+        <div class="item">INTERNET</div>
    <div class="item">ladoT</div>
    <div class="item">PagSeguro </div>
    <div class="item">RecargaPay</div>
    <div class="item">Reformar</div>
    </div>
+  <a href="https://wa.me/5571992290058"><img onclick="alert('IPTV O MELHOR DA TV POR ASSINATURA')"src="iptv.jpg"class="imgCompra"/></a>
+   <a href="https://wa.me/5571992290058"><img onclick="alert('INTERNET ILIMITADA PARA VIVO E TIM ')"src="internet.jpg"class="imgCompra"/></a>
     <a href="https://wa.me/5571993010261"><img onclick="alert('Ligue e Contrate para todos os evertos')"src="ladoT.jpg"class="imgCompra"/></a>
     <a href="pagbank.vc/indica-maquininhas-b44df1c97">
     <img onclick="alert('pagseguro comprar de maquininha com a menor taxa do mercado')" src="PagSeguro1.jpg"class="imgCompra"/></a>
@@ -310,6 +322,8 @@ html, body {
  
  
 </div>
+<div>
+<label class="labelCompra">COMPRE SEU BAHIA DA SORTE AQUI</label></div>
     <button class="blink" id="openModal"><b>COMPRAR IMPRESSOR</b></button>
     <a style="color:gold"href="https://ba.dasorte.com/comprar-titulo?code=eyJpZF9yZWdpb25hbCI6IjkwMyIsImlkX3ZlbmRlZG9yIjoiMTM5MzIifQ==">
         <button class="blink" id="openSite"><b>COMPRAR NO SITE</b></button></a>
