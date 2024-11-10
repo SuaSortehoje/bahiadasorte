@@ -1,160 +1,433 @@
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//pt-BR">
 <head>
-<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-<meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
- <link rel="stylesheet" type="text/css" href="stylesheet.css" media="screen" />
-<title> bahia da sorte</title>
- </head> <body>
- <h3> BAHIA da SORTE </h3>
- 
-<a  href="https://api.whatsapp.com/send?phone=5575998313436&text=QUERO%20COMPRA%20O%20BAHIA%20DA%20SORTE">
-<img src="bahia2.gif" onclick="compra()" id="rodado" class="" for=""></a><br><br>
-<a href="https://api.whatsapp.com/send?phone=5575998313436&text=QUERO%20COMPRA%20O%20BAHIA%20DA%20SORTE">
-<button class="blink"id="btn" onclick="compra()"><b> COMPRAR COM EDNEIA</button></a>
-<h>GANHADORES DA SEMANA PASSADA</h><br>
-
-<img src="bahia3.jpg" class="ganhador1">
-<img src="bahia3.jpg" class="ganhador1">
-<img src="bahia3.jpg" class="ganhador1">
-<img src="bahia3.jpg" class="ganhador1">
-<img src="bahia3.jpg" class="ganhador1">
-<img src="bahia3.jpg" class="ganhador1">
-
-<a href="giro.html">
-<button class="giro">RESULTADO GIRO DA SORTE</button></a>
-<p><b>1º</b>ANTÔNIO ALVES DA SILVA
-
-Bairro/cidade: IAPI (INTERNET/APP)
-
-Título: 1.656.968
-
-</p>
-<p><b>1ºEDUARDO MENDES DE SOUZA
-
-Bairro/cidade: QUIDE (INTERNET/APP)
-
-Título: 1.663.321
-
-</b></p>
-<p><b>1ºAGNALDO BALBINO DOS SANTOS
-
-Bairro/cidade: ITAPUÃ (INTERNET/APP)
-
-Título: 1.947.043
-
-</b></p>
-<p><b>1º MARCOS ANTONIO MENDES DA SILVA
-
-Bairro/cidade: REGIÃO METROPOLITANA (INTERNET/APP)
-
-Título: 2.169.726
-
-</b></p>
-<p><b>2º GILLAZARO PINHEIRO DOS SANTOS
-
-Bairro/cidade: CENTRO (PDV)
-
-Título: 0.634.926
-
-</b> 
-
-</p>
-<p><b>3º</b>EDUARDO SOUSA SILVA
-
-Bairro/cidade: URUGUAI (INTERNET/APP)
-
-Título: 1.991.602</p>
-<p><b>4º</b>ANTÔNIO ALVES DA SILVA
-
-Bairro/cidade: IAPI (INTERNET/APP)
-
-Título: 1.656.968
-
-</p>
-<p><b>4º</b>ANGELA MARIA CALDA MENDES</p>
-
-
-
-<p class="pxm">PROXIMO SORTEIO DIA 31/03 AGUARDEM...</p>
-<style>
-body {
-    background:gold;
-    color:black;
+    <link rel="shortcut icon" type="image/png" href="https://raw.githubusercontent.com/SuaSortehoje/bahiadasorte/main/IMGbahia_sorte1.jpg">
+    <link rel="icon" href="https://raw.githubusercontent.com/SuaSortehoje/bahiadasorte/main/IMGbahia_sorte1.jpg" type="image/jpg">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
+    <link rel="stylesheet" type="text/css" href="stylesheet.css" media="screen" />
+    <title>BAHIA da SORTE</title>
+    <style>
+        /* Adicione seu CSS aqui */
+        [type=submit] {
+            display: flex;
+            flex-direction: row;
+            justify-content: center;
+            margin: 20px;
+            height: 30px;
+        }
+        h2 {
+            display: flex;
+            flex-direction: row;
+            justify-content: center;
+            font-size: 18px;
+            color: black;
+        }
+        .modal {
+            display: none;
+            position: fixed;
+            z-index: 1;
+            left: 0;
+            top: 60px;
+            width: 100%;
+            height: 100%;
+            overflow: auto;
+            background-color: rgba(0,0,0,0.0);
+        }
+        .modal-content {
+            background-color: #00DF00;
+            margin: 15% auto;
+            padding: 20px;
+            border: 1px solid #888;
+            width: 80%;
+            border-radius: 10px;
+        }
+        .close {
+            color: red;
+            float: right;
+            font-size: 28px;
+            font-weight: bold;
+        }
+        .close:hover,
+        .close:focus {
+            color: black;
+            text-decoration: none;
+            cursor: pointer;
+        }
+        body {
+            background: #00d0ff;
+            color: black;
+        }
+        #rodado {
+            width: 100%;
+            height: 400px;
+            border-radius: 10px;
+        }
+        #rodado:focus {
+            transform: all 1.1.5s;
+        }
+        h3 {
+            display:flex;
+            
+           justify-content: center;
+            color: black;
+            margin:5px;
+        }
+        #openModal {
+            display: inline;
+            width: 30%;
+            height: 40px;
+            margin-left: 0px;
+            background: green;
+            color: white;
+            border-radius: 10px;
+            outline: none;  
+        }
+        #openSite{
+            display: inline;
+            width: 30%;
+            height: 40px;
+            margin-left: 5px;
+            background: gold;
+            border-radius: 10px;
+            outline: none;  
+        }
+        #openModal1 {
+            display: inline;
+            width: 30%;
+            height: 40px;
+            margin-left: 7px;
+            background: blue;
+            color :white;
+            border-radius: 10px;
+            outline: none;
+        }
+        #btn:focus {
+            background: red;
+            color: gold;
+            border-radius: 16px;
+            border-decoration: none;
+            outline: none;
+            border: 1px solid blue;
+        }
+        .ganhador1 {
+            width: 17%;
+            height: 100px;
+            margin-left: 1px;
+            border: 1px solid red;
+            border-radius: 16px;
+        }
+        .pxm {
+            color: red;
+            background: black;
+        }
+        .giro {
+            width: 40%;
+            height: 50px;
+            display: inline;
+            margin-left: 5%;
+            text-align: center;
+            font-size: 12px;
+            font-weight: bold;
+            border: 10px;
+            background: orange;
+            border-radius: 16px;
+            border: 1px solid black;
+            outline: none;
+            color: black;
+        }
+        a {
+            color: orange;
+        }
+        .premio {
+            display: flex;
+            flex-direction;
+            justify-content: center;
+        }
+        button[type="submit"] {
+            margin-left: 80px;
+            border-radius: 10px;
+            outline: none;   
+        }
+        button[type="submit"]:hover {
+            background: green;
+            color: white;
+        }
+        [name=numeroDezenas] {
+            width: 30px;
+            border-radius: 5px;
+            color: black;
+            text-align: center;
+            font-weight: bold;
+            outline: none;
+        }
+        [name=numeroDezenas]:focus {
+            background: pink;
+            color: black;
+        }
+        #cpf {
+            text-align: center;
+            width: 55%;
+            border-radius: 10px;
+            outline: none;
+            font-weight: bold;
+            margin-left: 50px;
+        }
+        #cpf:focus {
+            background: pink;
+            color: black;
+        }
+        .imagem {
+            border-radius: 50px;
+        }
+        #telefone {
+            text-align: center;
+            width: 40%;
+            border-radius: 10px;
+            outline: none;
+            font-weight: bold;
+            margin-left: 10px;
+        }
+        #telefone:focus {
+            background: pink;
+            color: black;
+        }
+        
+#parcelas, #legenda {
+    float: left;
+    clear: both;
     
+}
+#parcelas div {
+    float: left;
     
-}
-#rodado {
-    width:100%;
-    height:200px;
-    border-radius:10px;
-}
-#rodado:focus {
-    tranform:all 1,1,5s
-}
-h3 {
-    margin-left:30%;
-    content-justify:center;
+    padding: px 0px;
+    width: 40px;
+    background:blue;
     color:white;
+    margin-left:10px;
+    text-align: center;
+}
+#legenda div {
+    float: left;
+    margin-left:10px;
+    width: 40px;
+    margin:5px;
+    text-align: center;
     
+}
+.casca {
+    background:blue;
+}
+#valorTotal{
+    font-weight:bold;
+    margin-left:60px;
+    font-size:20px
     
 }
- #btn {
-          width:80%;
-          height:40px;
-          margin-left:10%;
-          background:gold;
-          
-          
-      }    
-      #btn:focus{
-          background:red;
-          color:gold;
-          border-radius:16px;
-          border-decoration:none;
-          outline:none;
-          border:1px solid blue;
-      }
-      h {margin-left:10%;
-      padding :10px;
-      display:flex;
-          
-      }
-.ganhador1{
-    width:23%;
-    height:100px;
-    margin-left:2px;
+.imgCompra{
+    width:15%;
+    height:45px;
+    margin:2px;
 }
-
-.pxm {
-    color:red;
-    background:black;
+#txta{
+    color:blue;
 }
-.giro {
-    width:60%;
-    height:50px;
+.central{
     display:flex;
-    margin-left:20%;
-    text-aligh:center;
-    padding:5px 30px;
-    border:10px;
-    background:orange;
-    border-radius:16px;
-    border:1px solid black;
-    outline:none;
-    color:white;
-    whieght:700;
+    justify-content:center;
+    
 }
-  .blink { animation: blink 2s steps(1, end) infinite;}
-     @keyframes blink { 0% { background:red; } 25% { background:pink; } 50% { background:gold; }75% {background:purple;
-     color:white;
-     }100% {background:pink;}
-     
-     }
-</style>
-<script>
-function compra(){
-    alert ("INFORME (CPF e TELEFONE)\nou So TELEFONE");
+.marquee { display:linear;width:150%; overflow: hidden; white-space: nowrap; box-sizing: border-box; animation: marquee 25s linear infinite; } 
+@keyframes marquee { 0% { transform: translateX(0%); } 50% { transform: translateX(-50%); } 100% { transform: translateX(-0%); } }
+
+html, body {
+  overflow: hidden;
 }
-</script>
+.tafixoaqui{
+    position:absolute;
+   
+}
+.alinha{
+    
+    
+}
+.item { display: inline-block; width: 15%; /* Ajuste para evitar quebra de linha */ margin: 0 0.3%; padding: 0px; background-color: lightgreen; text-align: center; }
+
+.labelCompra{
+    text-align:center;
+    font-weight:bold;
+    margin-left:30px;
+}
+    </style>
+</head>
+<body>
+    <div id="myModal" class="modal">
+        <div class="modal-content">
+            <span class="close">&times;</span>
+            <h2>COMPRAR O BAHIA DA SORTE</h2>
+            <form id="pixForm">
+                <label for="cpf"><b>CPF :</b></label>
+                <input maxlength="14" type="tel" id="cpf" name="cpf"><br><br>                                    
+                <label for="telefone"><b>TELEFONE :</b></label>
+                <input maxlength="13" type="tel" id="telefone" name="telefone" required><br><br>
+                <label for="numeroDezenas"><b>Nº Dezenas:</b></label>
+                <input maxlength="2" type="tel" id="numeroDezenas1" name="numeroDezenas" required oninput="validarDezena(this)">
+                <input maxlength="2" type="tel" id="numeroDezenas2" name="numeroDezenas" oninput="validarDezena(this)">
+                <input maxlength="2" type="tel" id="numeroDezenas3" name="numeroDezenas" oninput="validarDezena(this)">
+                <input maxlength="2" type="tel" id="numeroDezenas4" name="numeroDezenas" oninput="validarDezena(this)"><br>
+                <p id="valorTotal"> Total a Pagar: R$ 0,00</p>
+                <button type="submit">Enviar para Validar</button>
+            </form>
+        </div>
+    </div>
+
+    <h3>BAHIA da SORTE</h3>
+    
+
+    <div id="parcelas">
+    <div></div>
+    <div></div>
+    <div></div>
+    <div></div>
+</div>
+<div id="legenda">
+    <div>dias</div>
+    <div>hrs</div>
+    <div>min</div>
+    <div>seg</div>
+</div>
+    </div>
+    <a href="https://api.whatsapp.com/send?phone=5571992290058&text=QUERO%20COMPRA%20O%20BAHIA%20DA%20SORTE">
+        <img alt="SEM EDICAO" src="https://raw.githubusercontent.com/SuaSortehoje/bahiadasorte/main/17112024.jpg" onclick="compra()" id="rodado" class="imagem">
+    </a><br>
+<div class="marquee" >
+    <div class="alinha">
+        <div class="item">IPTV</div>
+        <div class="item">INTERNET</div>
+   <div class="item">ladoT</div>
+   <div class="item">PagSeguro </div>
+   <div class="item">RecargaPay</div>
+   <div class="item">Reformar</div>
+   </div>
+  <a href="https://wa.me/5571992290058"><img onclick="alert('IPTV O MELHOR DA TV POR ASSINATURA')"src="iptv.jpg"class="imgCompra"/></a>
+   <a href="https://wa.me/5571992290058"><img onclick="alert('INTERNET ILIMITADA PARA VIVO E TIM ')"src="internet.jpg"class="imgCompra"/></a>
+    <a href="https://wa.me/5571993010261"><img onclick="alert('Ligue e Contrate para todos os evertos')"src="ladoT.jpg"class="imgCompra"/></a>
+    <a href="pagbank.vc/indica-maquininhas-b44df1c97">
+    <img onclick="alert('pagseguro comprar de maquininha com a menor taxa do mercado')" src="PagSeguro1.jpg"class="imgCompra"/></a>
+  
+ <a href="https://recargapay.com.br/r/suemac549-ZEG"><img onclick="alert('RecargaPay abrar sua conta e um Mundo de vantagem!')"src="recargaPay.jpg"class="imgCompra"/></a>
+ 
+   
+ <a href="https://wa.me/5571999259612"><img onclick="alert(Reformar de casa em geral gesso pintura elétrica construção!')"src="reforma.jpeg"class="imgCompra"/></a>
+ 
+ 
+</div>
+<div>
+<label class="labelCompra">COMPRE SEU BAHIA DA SORTE AQUI</label></div>
+    <button class="blink" id="openModal"><b>COMPRAR IMPRESSOR</b></button>
+    <a style="color:gold"href="https://ba.dasorte.com/comprar-titulo?code=eyJpZF9yZWdpb25hbCI6IjkwMyIsImlkX3ZlbmRlZG9yIjoiMTM5MzIifQ==">
+        <button class="blink" id="openSite"><b>COMPRAR NO SITE</b></button></a>
+
+    <a style="color:blue;display:none" href="resultadoBahiaDaSorte.html"></a>
+    <a id="txta" href="https://ba.dasorte.com/comprar-titulo?code=eyJpZF9yZWdpb25hbCI6IjkwMyIsImlkX3ZlbmRlZG9yIjoiMTM5MzIifQ==">
+        <button id="openModal1"><b>CONSULTAR RESULTADO</b></button></a>
+
+    <script>
+        function validarDezena(input) {
+            if (input.value > 60) {
+                alert('O número deve ser no máximo 60');
+                input.value = '';
+            }
+            atualizarValorTotal();
+        }
+
+        function atualizarValorTotal() {
+            const numeroDezenas1 = parseInt(document.getElementById('numeroDezenas1').value) || 0;
+            const numeroDezenas2 = parseInt(document.getElementById('numeroDezenas2').value) || 0;
+            const numeroDezenas3 = parseInt(document.getElementById('numeroDezenas3').value) || 0;
+            const numeroDezenas4 = parseInt(document.getElementById('numeroDezenas4').value) || 0;
+
+            const totalDezenas = (numeroDezenas1 > 0 ? 5 : 0) + (numeroDezenas2 > 0 ? 5 : 0) + (numeroDezenas3 > 0 ? 5 : 0) + (numeroDezenas4 > 0 ? 5 : 0);
+            document.getElementById('valorTotal').textContent = `Valor Total: R$ ${totalDezenas},00`;
+        }
+
+        // Abrir modal ao clicar no botão
+        document.getElementById('openModal').addEventListener('click', function() {
+            document.getElementById('myModal').style.display = 'block';
+        });
+
+        // Fechar modal ao clicar no botão de fechar
+        document.getElementsByClassName('close')[0].addEventListener('click', function() {
+            document.getElementById('myModal').style.display = 'none';
+        });
+
+        document.getElementById('pixForm').addEventListener('submit', function(event) {
+            event.preventDefault();
+
+            const cpf = document.getElementById('cpf').value;
+            const telefone = document.getElementById('telefone').value;
+
+            // Recupere os valores dos campos de dezenas individualmente
+            const numeroDezenas1 = parseInt(document.getElementById('numeroDezenas1').value) || '';
+            const numeroDezenas2 = parseInt(document.getElementById('numeroDezenas2').value) || '';
+            const numeroDezenas3 = parseInt(document.getElementById('numeroDezenas3').value) || '';
+            const numeroDezenas4 = parseInt(document.getElementById('numeroDezenas4').value) || '';
+
+            // Combine todos os valores em uma única string
+            const numeroDezenas = `${numeroDezenas1}, ${numeroDezenas2}, ${numeroDezenas3}, ${numeroDezenas4}`;
+
+            // Calcule o valor total das dezenas
+            const totalDezenas = (numeroDezenas1 > 0 ? 5 : 0) + (numeroDezenas2 > 0 ? 5 : 0) + (numeroDezenas3 > 0 ? 5 : 0) + (numeroDezenas4 > 0 ? 5 : 0);
+
+            const titulo = 'VALIDAR O BAHIA DA SORTE';
+            const premio ="*200.000.00*\n TOTAL LIQUIDO R$ 200.000.00";
+            const chavepix = 'telefone: 71992290058\n\Carlos dos Santos Reis\nCelcoin';
+            const alerta = "Apos o fazer o ( PIX ) Aguarde ate 3 minutos para receber sua cartela validada";
+            const valor = `R$ ${totalDezenas},00`;
+
+            const saudacao = "BOA SORTE!!!";
+
+            const numeroWhatsApp = 71992290058;
+
+            const lista = "----------------------------------------------";
+
+            var mensagem = `  *☘${titulo}☘*\n                    ${premio}\n\nCPF : ${cpf}\n\nTelefone : ${telefone}\n\nNúmero de Dezenas : ${numeroDezenas}\n\nVALOR A PAGAR : ${valor}\n\n*${lista}*\n\n*CHAVE PIX*\n${chavepix}\n\n*${alerta}*\n\n*☘${saudacao}☘*`;
+
+            var mensagemEncoded = encodeURIComponent(mensagem);
+            var linkWhatsApp = `https://api.whatsapp.com/send?phone=${numeroWhatsApp}&text=${mensagemEncoded}`;
+            window.open(linkWhatsApp, '_blank');
+
+            document.getElementById('myModal').style.display = 'none'; // Fechar o modal após enviar os dados
+        });
+        
+        
+        var data = '2024/11/17';
+var falta = (new Date(data).getTime() - new Date().getTime()) / 1000;
+var segundos = Math.round(falta % 60);
+var minutos = Math.round(falta / 60 % 60);
+var horas = Math.round(falta / 60 / 60 % 24);
+var dias = Math.round(falta / 60 / 60 / 24);
+var divs = document.querySelectorAll('#parcelas div');
+
+setInterval(function () {
+    if (segundos == 0) {
+        segundos = 60;
+        minutos--;
+    }
+    if (minutos == 0) {
+        minutos = 60;
+        horas--;
+    }
+    if (horas == 0) {
+        horas = 24;
+        dias--;
+    }
+    segundos--;
+    var contador = [dias, horas, minutos, segundos].forEach(function (parcela, i) {
+        divs[i].innerHTML = parcela;
+    });
+
+}, 1000);
+    </script>
 </body>
 </html>
