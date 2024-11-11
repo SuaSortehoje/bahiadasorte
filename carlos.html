@@ -229,6 +229,10 @@
     width:15%;
     height:45px;
     margin:2px;
+    
+}
+.imgCompra.adicionara{
+    transform:scale(2.5);
 }
 #txta{
     color:blue;
@@ -239,7 +243,12 @@
     
 }
 .marquee { display:linear;width:150%; overflow: hidden; white-space: nowrap; box-sizing: border-box; animation: marquee 25s linear infinite; } 
-@keyframes marquee { 0% { transform: translateX(0%); } 50% { transform: translateX(-50%); } 100% { transform: translateX(-0%); } }
+@keyframes marquee { 
+0% { transform: translateX(0%); } 
+50% { transform: translateX(-40%); }
+ 100% { transform: translateX(-0%); 
+} 
+}
 
 html, body {
   overflow: hidden;
@@ -252,11 +261,12 @@ html, body {
     
     
 }
-.item { display: inline-block; width: 15%; /* Ajuste para evitar quebra de linha */ margin: 0 0.3%; padding: 0px; background-color: lightgreen; text-align: center; }
+.item { display: inline-block; width: 15%; /* Ajuste para evitar quebra de linha */ margin: 0 0.3%; padding: 0px; background-color: lightgreen; text-align: center; font-size:14px;}
 
 .labelCompra{
     text-align:center;
     font-weight:bold;
+    
     margin-left:30px;
 }
     </style>
@@ -334,6 +344,9 @@ html, body {
         <button id="openModal1"><b>CONSULTAR RESULTADO</b></button></a>
 
     <script>
+ const elementos = document.querySelectorAll('.imgCompra'); // Adiciona o evento de clique a cada elemento elementos.forEach((elemento) => { elemento.addEventListener('click', () => { // Adiciona a classe 'adicionara' ao elemento clicado elemento.classList.add('adicionara'); }); });
+        
+        
         function validarDezena(input) {
             if (input.value > 60) {
                 alert('O número deve ser no máximo 60');
@@ -432,3 +445,4 @@ setInterval(function () {
     </script>
 </body>
 </html>
+
