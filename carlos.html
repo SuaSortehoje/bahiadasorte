@@ -1,7 +1,7 @@
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//pt-BR">
 <head>
-    <link rel="shortcut icon" type="image/png" href="https://raw.githubusercontent.com/SuaSortehoje/bahiadasorte/main/sorte.jpg">
-    <link rel="icon" href="https://raw.githubusercontent.com/SuaSortehoje/bahiadasorte/main/sorte.jpg" type="image/jpg">
+    <link rel="shortcut icon" type="image/png" href="https://raw.githubusercontent.com/SuaSortehoje/bahiadasorte/main/24112024.jpg">
+    <link rel="icon" href="https://raw.githubusercontent.com/SuaSortehoje/bahiadasorte/main/24112024.jpg" type="image/jpg">
     <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
     <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
     <link rel="stylesheet" type="text/css" href="stylesheet.css" media="screen" />
@@ -273,6 +273,7 @@ html, body {
     
     margin-left:30px;
 }
+ .blink { animation-duration: 3s; animation-name: slidein; } @keyframes slidein { from { margin-left: 100%; width: 300%; } to { margin-left: 0%; width: 100%; } }}
     </style>
 </head>
 <body>
@@ -314,7 +315,7 @@ html, body {
 </div>
     </div>
     <a href="https://api.whatsapp.com/send?phone=5571992290058&text=QUERO%20COMPRA%20O%20BAHIA%20DA%20SORTE">
-        <img alt="SEM EDICAO" src="https://raw.githubusercontent.com/SuaSortehoje/bahiadasorte/main/17112024.jpg" onclick="compra()" id="rodado"class="imagem">
+        <img alt="SEM EDICAO" src="https://raw.githubusercontent.com/SuaSortehoje/bahiadasorte/main/24112024.jpg" onclick="compra()" id="rodado"class="imagem">
     </a><br>
 <div class="marquee" >
     <div class="alinha">
@@ -342,7 +343,7 @@ html, body {
 <label class="labelCompra">COMPRE SEU BAHIA DA SORTE AQUI</label></div>
     <button class="blink" id="openModal"><b>COMPRAR IMPRESSOR</b></button>
     <a style="color:gold"href="https://ba.dasorte.com/comprar-titulo?code=eyJpZF9yZWdpb25hbCI6IjkwMyIsImlkX3ZlbmRlZG9yIjoiMTM5MzIifQ==">
-        <button class="blink" id="openSite"><b>COMPRAR NO SITE</b></button></a>
+        <button class="blin" id="openSite"><b>COMPRAR NO SITE</b></button></a>
 
     <a style="color:blue;display:none" href="resultadoBahiaDaSorte.html"></a>
     <a id="txta" href="https://ba.dasorte.com/comprar-titulo?code=eyJpZF9yZWdpb25hbCI6IjkwMyIsImlkX3ZlbmRlZG9yIjoiMTM5MzIifQ==">
@@ -405,7 +406,7 @@ const numeroDezenas5 = parseInt(document.getElementById('numeroDezenas5').value)
 
             const titulo = 'VALIDAR O BAHIA DA SORTE';
             const premio ="*200.000.00*\n TOTAL LIQUIDO R$ 200.000.00";
-            const chavepix = 'telefone: 71992290058\n\CARLOS DOS SANTOS REIS\nCelcoin';
+            const chavepix = 'telefone: 71992290058\n\Sueli Maciel Silva\nCelcoin';
             const alerta = "Apos o fazer o ( PIX ) Aguarde ate 3 minutos para receber sua cartela validada";
             const valor = `R$ ${totalDezenas},00`;
 
@@ -413,9 +414,9 @@ const numeroDezenas5 = parseInt(document.getElementById('numeroDezenas5').value)
 
             const numeroWhatsApp = 71992290058;
 
-            const lista = "----------------------------------------------";
+            const lista = "-------------------------------------------";
 
-            var mensagem = `  *☘${titulo}☘*\n                    ${premio}\n\nCPF : ${cpf}\n\nTelefone : ${telefone}\n\nNúmero de Dezenas : ${numeroDezenas}\n\nVALOR A PAGAR : ${valor}\n\n*${lista}*\n\n*CHAVE PIX*\n${chavepix}\n\n*${alerta}*\n\n*☘${saudacao}☘*`;
+            var mensagem = `  *☘${titulo}☘*\n                    ${premio}\n\nCPF : ${cpf}\n\nTelefone : ${telefone}\n\nNúmero de Dezenas : ${numeroDezenas}\n\nVALOR A PAGAR : ${valor}\n\n*${lista}*\n\n*CHAVE PIX*\n${chavepix}\n\n*${alerta}*\n\n                *☘${saudacao}☘*`;
 
             var mensagemEncoded = encodeURIComponent(mensagem);
             var linkWhatsApp = `https://api.whatsapp.com/send?phone=${numeroWhatsApp}&text=${mensagemEncoded}`;
@@ -425,7 +426,7 @@ const numeroDezenas5 = parseInt(document.getElementById('numeroDezenas5').value)
         });
         
         
-        var data = '2024/11/17';
+        var data = '2024/11/24';
 var falta = (new Date(data).getTime() - new Date().getTime()) / 1000;
 var segundos = Math.round(falta % 60);
 var minutos = Math.round(falta / 60 % 60);
@@ -453,10 +454,11 @@ setInterval(function () {
 
 }, 1000);
 
-function brinder(){
-    alert("NA COMPRAR DE ( 05 ) BAHIA DA SORTE DA MESMA EDIÇÃO \nGANHAR +1 GRATIS.\n\ACUMULADO NO MES 10 BAHIA DA SORTE GANHAR +1")
-};
-brinder()
+
+    alert("NA COMPRAR DE ( 05 ) BAHIA DA SORTE DA MESMA EDIÇÃO \nGANHAR +1 GRATIS.\n\ACUMULADO NO MES 10 BAHIA DA SORTE GANHAR +1");
+    
+
     </script>
 </body>
 </html>
+ 
