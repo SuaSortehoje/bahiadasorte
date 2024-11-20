@@ -75,17 +75,18 @@
         }
         #openModal {
             display: inline;
-            width: 30%;
+            width: 45%;
             height: 40px;
             margin-left: 0px;
             background: green;
             color: white;
             border-radius: 10px;
             outline: none;  
+            z-index:3;
         }
         #openSite{
             display: inline;
-            width: 30%;
+            width: 40%;
             height: 40px;
             margin-left: 5px;
             background: gold;
@@ -94,13 +95,14 @@
         }
         #openModal1 {
             display: inline;
-            width: 30%;
+            width: 55%;
             height: 40px;
             margin-left: 7px;
             background: blue;
             color :white;
             border-radius: 10px;
             outline: none;
+            z-index:1;
         }
         #btn:focus {
             background: red;
@@ -154,6 +156,9 @@
             background: green;
             color: white;
         }
+        button:active {
+    transform: scale(0.98);
+}
         [name=numeroDezenas] {
             width: 30px;
             border-radius: 5px;
@@ -229,19 +234,19 @@
     font-size:20px
     
 }
-.imgCompra{
-    width:15%;
-    height:45px;
-    margin:2px;
+    .imgCompra{
+        width:15%;
+        height:45px;
+        margin:2px;
     
 }
-.imgCompra.adicionara{
+    .imgCompra.adicionara{
     transform:scale(2.5);
 }
-#txta{
+    #txta{
     color:blue;
 }
-.central{
+    .central{
     display:flex;
     justify-content:center;
     
@@ -274,9 +279,61 @@ html, body {
     margin-left:30px;
 }
  .blink { animation-duration: 3s; animation-name: slidein; } @keyframes slidein { from { margin-left: 100%; width: 300%; } to { margin-left: 0%; width: 100%; } }}
+ 
+ .sobrepor{
+ position:fixed;
+     
+ }
+ .stiloModal{
+     display:flex;
+     position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.5); /* Fundo transparente */
+  justify-content: center;
+  align-items: center;
+ }
+.contentModal{
+     background-color: lightblue;
+  padding: 20px;
+  border-radius: 8px;
+  width: 300px;
+  text-align: center;
+ }
+ .fechaModal{
+ top:0px;
+     float: right;
+  font-size: 24px;
+  cursor: pointer;
+ }
+ p{
+     font-weight:bold;
+ }
+ span{
+     color:red;
+ }
+ .ganhar{
+     color:green;
+     background:white;
+     font-weight:bold;
+     border-radius:10px;
+     margin:2px;
+ }
     </style>
 </head>
 <body>
+   
+<div id="siloModal" class="stiloModal">
+    <div id="" class="contentModal">
+        <span class="fechaModal">&times;</span>
+        <h2>PROMOCAO</h2>
+        
+        <p>NA COMPRAR DE ( 05 ) BAHIA DA SORTE DA MESMA EDIÇÃO <span class="ganhar">GANHAR + 1 GRATIS<span></span></p><p>ACUMULADO NO MES 10 BAHIA DA SORTE<span class="ganhar"> GANHAR + 1</span></p>
+        <button class="blink" id="openModal"><b>COMPRAR IMPRESSOR</b></button>
+    </div>
+</div>
     <div id="myModal" class="modal">
         <div class="modal-content">
             <span class="close">&times;</span>
@@ -339,16 +396,16 @@ html, body {
  
  
 </div>
-<div>
-<label class="labelCompra">COMPRE SEU BAHIA DA SORTE AQUI</label></div>
-    <button class="blink" id="openModal"><b>COMPRAR IMPRESSOR</b></button>
+<div class="sobrepor">
+<label class="labelCompra">COMPRE SEU BAHIA DA SORTE AQUI</label>
+    
     <a style="color:gold"href="https://ba.dasorte.com/comprar-titulo?code=eyJpZF9yZWdpb25hbCI6IjkwMyIsImlkX3ZlbmRlZG9yIjoiMTM5MzIifQ==">
         <button class="blin" id="openSite"><b>COMPRAR NO SITE</b></button></a>
 
     <a style="color:blue;display:none" href="resultadoBahiaDaSorte.html"></a>
     <a id="txta" href="https://ba.dasorte.com/comprar-titulo?code=eyJpZF9yZWdpb25hbCI6IjkwMyIsImlkX3ZlbmRlZG9yIjoiMTM5MzIifQ==">
         <button id="openModal1"><b>CONSULTAR RESULTADO</b></button></a>
-
+</div>
     <script>
  const elementos = document.querySelectorAll('.imgCompra'); // Adiciona o evento de clique a cada elemento elementos.forEach((elemento) => { elemento.addEventListener('click', () => { // Adiciona a classe 'adicionara' ao elemento clicado elemento.classList.add('adicionara'); }); });
         
@@ -426,37 +483,89 @@ const numeroDezenas5 = parseInt(document.getElementById('numeroDezenas5').value)
         });
         
         
-        var data = '2024/11/24';
-var falta = (new Date(data).getTime() - new Date().getTime()) / 1000;
-var segundos = Math.round(falta % 60);
-var minutos = Math.round(falta / 60 % 60);
-var horas = Math.round(falta / 60 / 60 % 24);
-var dias = Math.round(falta / 60 / 60 / 24);
-var divs = document.querySelectorAll('#parcelas div');
+    const dataFinal = new Date('2024/11/24').getTime();
+const divs = document.querySelectorAll('#parcelas div');
 
-setInterval(function () {
-    if (segundos == 0) {
-        segundos = 60;
-        minutos--;
+function atualizarContador() {
+    const agora = new Date().getTime();
+    const falta = dataFinal - agora;
+
+    if (falta < 0) {
+        divs.forEach((div) => {
+            div.innerHTML = '0';
+        });
+        return;
     }
-    if (minutos == 0) {
-        minutos = 60;
-        horas--;
-    }
-    if (horas == 0) {
-        horas = 24;
-        dias--;
-    }
-    segundos--;
-    var contador = [dias, horas, minutos, segundos].forEach(function (parcela, i) {
-        divs[i].innerHTML = parcela;
+
+    const segundos = Math.floor((falta / 1000) % 60);
+    const minutos = Math.floor((falta / (1000 * 60)) % 60);
+    const horas = Math.floor((falta / (1000 * 60 * 60)) % 24);
+    const dias = Math.floor(falta / (1000 * 60 * 60 * 24));
+
+    const valores = [dias, horas, minutos, segundos];
+    valores.forEach((valor, i) => {
+        divs[i].innerHTML = valor;
     });
+}
 
-}, 1000);
+setInterval(atualizarContador, 1000);
+atualizarContador();
 
+   
+// Fechar o modal de promoção ao clicar no "X"
+let stiloModal = document.querySelector('.stiloModal');
+let fechaModal = document.querySelector('.fechaModal');
 
-    alert("NA COMPRAR DE ( 05 ) BAHIA DA SORTE DA MESMA EDIÇÃO \nGANHAR +1 GRATIS.\n\ACUMULADO NO MES 10 BAHIA DA SORTE GANHAR +1");
-    
+// Fecha o modal ao clicar no "X"
+fechaModal.addEventListener('click', () => {
+    stiloModal.style.display = 'none';
+});
+
+// Fecha o modal ao clicar fora dele
+window.addEventListener('click', (event) => {
+    if (event.target === stiloModal) {
+        stiloModal.style.display = 'none';
+    }
+});
+
+// Validação do CPF
+function validarCPF(cpf) {
+    cpf = cpf.replace(/\D/g, ''); // Remove caracteres não numéricos
+    if (cpf.length !== 11 || /^(\d)\1{10}$/.test(cpf)) return false;
+
+    let soma = 0;
+    for (let i = 0; i < 9; i++) soma += parseInt(cpf.charAt(i)) * (10 - i);
+    let resto = (soma * 10) % 11;
+    if (resto === 10 || resto === 11) resto = 0;
+    if (resto !== parseInt(cpf.charAt(9))) return false;
+
+    soma = 0;
+    for (let i = 0; i < 10; i++) soma += parseInt(cpf.charAt(i)) * (11 - i);
+    resto = (soma * 10) % 11;
+    if (resto === 10 || resto === 11) resto = 0;
+    return resto === parseInt(cpf.charAt(10));
+}
+
+// Máscara para o campo de telefone
+const telefoneInput = document.getElementById('telefone');
+telefoneInput.addEventListener('input', () => {
+    let telefone = telefoneInput.value.replace(/\D/g, '');
+    telefone = telefone.replace(/^(\d{2})(\d)/g, '($1) $2');
+    telefone = telefone.replace(/(\d{5})(\d)/, '$1-$2');
+    telefoneInput.value = telefone;
+});
+
+// Validação do formulário
+const formulario = document.getElementById('formulario');
+const cpfInput = document.getElementById('cpf');
+
+formulario.addEventListener('submit', (event) => {
+    const cpf = cpfInput.value;
+    if (!validarCPF(cpf)) {
+        alert('CPF inválido. Por favor, insira um CPF válido.');
+        event.preventDefault();
+    }
+});
 
     </script>
 </body>
