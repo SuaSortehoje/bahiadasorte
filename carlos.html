@@ -484,18 +484,36 @@ const numeroDezenas5 = parseInt(document.getElementById('numeroDezenas5').value)
         });
         
         
-    const dataFinal = new Date('2025/01/26').getTime();
-const divs = document.querySelectorAll('#parcelas div');
+    // Função para calcular a próxima segunda-feira
+function calcularProximaSegunda() {
+  const hoje = new Date();
+  const diaSemana = hoje.getDay(); // 0 (Domingo) a 6 (Sábado)
+  const diasAteSegunda = (1 - diaSemana + 6) % 7; // Calcula os dias até a próxima segunda
+  const proximaSegunda = new Date(hoje.getFullYear(), hoje.getMonth(), hoje.getDate() + diasAteSegunda);
+  return proximaSegunda;
+}
 
-function atualizarContador() {
+// Atualiza a data final para 7 dias após a próxima segunda-feira
+function atualizarDataFinal() {
+  const proximaSegunda = calcularProximaSegunda();
+  const dataFinal = new Date(proximaSegunda.getFullYear(), proximaSegunda.getMonth(), proximaSegunda.getDate() + 1);
+  return dataFinal;
+}
+
+// Configura o contador
+function iniciarContador() {
+  const dataFinal = atualizarDataFinal().getTime();
+  const divs = document.querySelectorAll('#parcelas div');
+
+  function atualizarContador() {
     const agora = new Date().getTime();
     const falta = dataFinal - agora;
 
     if (falta < 0) {
-        divs.forEach((div) => {
-            div.innerHTML = '0';
-        });
-        return;
+      divs.forEach((div) => {
+        div.innerHTML = '0';
+      });
+      return;
     }
 
     const segundos = Math.floor((falta / 1000) % 60);
@@ -505,14 +523,16 @@ function atualizarContador() {
 
     const valores = [dias, horas, minutos, segundos];
     valores.forEach((valor, i) => {
-        divs[i].innerHTML = valor;
+      divs[i].innerHTML = valor;
     });
+  }
+
+  setInterval(atualizarContador, 1000);
 }
 
-setInterval(atualizarContador, 1000);
-atualizarContador();
+// Inicializa o contador
+iniciarContador();
 
-   
 // Fechar o modal de promoção ao clicar no "X"
 let stiloModal = document.querySelector('.stiloModal');
 let fechaModal = document.querySelector('.fechaModal');
